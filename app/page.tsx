@@ -1,113 +1,303 @@
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div
+        className="bg-[url('/images/background.png')] bg-no-repeat 
+    bg-auto h-[800px] w-full"
+      >
+        <Header />
+
+        <div className="w-[559px] p-10 bg-[#FFF3E3] mt-36 mr-10 ml-auto">
+          <p className="font-semibold tex-base">New Arrival</p>
+          <h1 className="font-bold leading-[65px] text-[52px] text-[#B88E2F]">
+            Discover Our <br /> New Collection
+          </h1>
+          <p className="font-medium text-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis.
+          </p>
+          <button className="bg-[#B88E2F] w-44 p-4 mt-6 rounded-md">
+            <Link href="/" className="text-base font-bold text-white">
+              Buy Now
+            </Link>
+          </button>
+        </div>
+      </div>
+      <div className="w-full text-center">
+        <h3 className="font-bold text-[32px]">Browse The Range</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <div
+        className="w-full flex flex-col 
+      md:flex-row justify-around items-center gap-6 p-4 md:p-20"
+      >
+        <div
+          className="w-full md:w-1/3 flex 
+        flex-col justify-center items-center"
+        >
+          <Image
+            src={"/images/dinning.png"}
+            alt="Dining"
+            width={700}
+            height={700}
+            className="w-[581px] h-[400px]"
+          />
+          <h4 className="font-semibold text-2xl text-center">Dining</h4>
+        </div>
+
+        <div className="w-full md:w-1/3 flex flex-col justify-center items-center">
+          <Image
+            src={"/images/living.png"}
+            alt="living"
+            width={381}
+            height={400}
+            className="w-[381px] h-[400px]"
+          />
+          <h4 className="font-semibold text-2xl text-center">Living</h4>
+        </div>
+
+        <div className="w-full md:w-1/3 flex flex-col justify-center items-center">
+          <Image
+            src={"/images/bedroom.png"}
+            alt="Bedroom"
+            width={381}
+            height={400}
+            className="w-[381px] h-[400px]"
+          />
+          <h4 className="font-semibold text-2xl text-center">Bedroom</h4>
         </div>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="w-full text-center">
+        <h3 className="font-bold text-[40px]">Our Products</h3>
       </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <div
+        className="w-full flex flex-col md:flex-row justify-center gap-4	
+    md:justify-around items-center pt-0 p-0 md:p-16"
+      >
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/Images.png"}
+              alt="Images"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <h3 className="font-semibold leading-7 text-2xl bg-[#F4F5F7]">
+            Syltherine
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Stylish cafe chair
           </p>
-        </a>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 2.500.000
+          </h3>
+        </div>
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/Images (1).png"}
+              alt="Images (1)"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
+            Leviosa
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Stylish cafe chair
           </p>
-        </a>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 2.500.000
+          </h3>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/Images (2).png"}
+              alt="Images (2)"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
+
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
+            Lolito
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Luxury big sofa
           </p>
-        </a>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 7.000.000
+          </h3>
+        </div>
+
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/image 4.png"}
+              alt="image 4"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
+
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
+            Respira
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Outdoor bar table and stool
+          </p>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 500.000
+          </h3>
+        </div>
       </div>
-    </main>
+
+      <div
+        className="w-full flex flex-col md:flex-row justify-center gap-4	
+    md:justify-around items-center pt-0 p-0 md:p-16"
+      >
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/Images.png"}
+              alt="Images"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
+
+          <h3 className="font-semibold leading-7 text-2xl bg-[#F4F5F7]">
+            Syltherine
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Stylish cafe chair
+          </p>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 2.500.000
+          </h3>
+        </div>
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/Images (1).png"}
+              alt="Images (1)"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
+
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
+            Leviosa
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Stylish cafe chair
+          </p>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 2.500.000
+          </h3>
+        </div>
+
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/Images (2).png"}
+              alt="Images (2)"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
+
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
+            Lolito
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Luxury big sofa
+          </p>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 7.000.000
+          </h3>
+        </div>
+
+        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
+          <div className="bg-[#F5F5F5]">
+            <Image
+              src={"/images/image 4.png"}
+              alt="image 4"
+              width={120}
+              height={80}
+              className="w-[272px] h-60 m-auto"
+            />
+          </div>
+
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
+            Respira
+          </h3>
+          <p className="text-[#898989] text-base bg-[#F4F5F7]">
+            Outdoor bar table and stool
+          </p>
+          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
+            Rp 500.000
+          </h3>
+        </div>
+      </div>
+      <div className="w-full flex justify-center items-center">
+        <button
+          className="w-40 p-2 rounded-lg text-center border border-[#B88E2F] bg-white text-[#B88E2F] 
+hover:border-0 hover:bg-[#B88E2F] hover:text-white"
+        >
+          <Link href="productpage">Shop More</Link>
+        </button>
+        </div>
+
+<div className="bg-[#FCF8F3] w-full flex flex-col md:flex-row justify-around items-center gap-4">
+  <div className="w-1/2 p-24">
+  <h2 className="font-bold text-[40px]">50+ Beautiful rooms inspiration</h2>
+  <p className="pr-4">Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
+  <button
+          className="w-40 p-2 mt-10 rounded-lg text-center border border-[#B88E2F] bg-[#B88E2F] text-white 
+hover:border-[#B88E2F]  hover:bg-white hover:text-[#B88E2F] "
+        >
+          <Link href="productpage">Explore Now</Link>
+        </button>
+  </div>
+  
+  <div className="w-1/3">
+  <Image src={"/images/Rectangle 24.png"} alt="Rectangle 24" width={100} height={100} className="w-full p-2"/>
+  </div>
+  
+  <div className="w-1/3">
+  <Image src={"/images/Rectangle 25.png"} alt="Rectangle 25" width={100} height={100} className="w-full"/>
+  </div>
+
+</div>
+      <div className="w-full text-center">
+        <p className="text-[#616161]">Share your setup with</p>
+        <h3 className="font-bold text-[32px]">#FuniroFurniture</h3>
+      </div>
+      <Image src={"/images/multi-img.png"} alt="multi-img" width={100} height={100} className="w-10/12"/>
+
+      <Footer />
+    </>
   );
 }
