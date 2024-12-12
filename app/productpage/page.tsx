@@ -18,9 +18,9 @@ const page = () => {
 
       <div className="w-full flex bg-[#F9F1E7]  items-center justify-between p-4 md:p-16">
         <h2 className="flex items-center justify-between text-slate-300 tracking-wide">
-          {" "}
+          
           Home <IoIosArrowForward />
-          Shop <IoIosArrowForward />{" "}
+          Shop <IoIosArrowForward />
           <RxDividerVertical className="text-black text-2xl" />
           <span className=" text-black">Asgaard Sofa</span>
         </h2>

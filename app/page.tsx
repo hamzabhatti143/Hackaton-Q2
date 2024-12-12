@@ -12,12 +12,12 @@ export default function Home() {
       >
         <Header />
 
-        <div className="w-[559px] p-10 bg-[#FFF3E3] mt-36 mr-10 ml-auto">
-          <p className="font-semibold tex-base">New Arrival</p>
-          <h1 className="font-bold leading-[65px] text-[52px] text-[#B88E2F]">
+        <div className="w-3/4 border-2 md:w-[559px] p-4 md:p-10 bg-[#FFF3E3] mt-20 md:mt-36 mr-4 md:mr-10 ml-auto">
+          <p className="font-semibold text-base">New Arrival</p>
+          <h1 className="font-bold leading-8 md:leading-[65px] text-3xl md:text-[52px] text-[#B88E2F]">
             Discover Our <br /> New Collection
           </h1>
-          <p className="font-medium text-lg">
+          <p className="font-medium text-base md:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis.
           </p>
@@ -89,7 +89,7 @@ export default function Home() {
               alt="Images"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -110,7 +110,7 @@ export default function Home() {
               alt="Images (1)"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -132,7 +132,7 @@ export default function Home() {
               alt="Images (2)"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
               alt="image 4"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -181,7 +181,7 @@ export default function Home() {
               alt="Images"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -202,7 +202,7 @@ export default function Home() {
               alt="Images (1)"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -224,7 +224,7 @@ export default function Home() {
               alt="Images (2)"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -246,7 +246,7 @@ export default function Home() {
               alt="image 4"
               width={120}
               height={80}
-              className="w-[272px] h-60 m-auto"
+              className="w-[272px] h-60"
             />
           </div>
 
@@ -271,8 +271,8 @@ hover:border-0 hover:bg-[#B88E2F] hover:text-white"
         </div>
 
 <div className="bg-[#FCF8F3] w-full flex flex-col md:flex-row justify-around items-center gap-4">
-  <div className="w-1/2 p-24">
-  <h2 className="font-bold text-[40px]">50+ Beautiful rooms inspiration</h2>
+  <div className="w-full md:w-1/2 p-10 md:p-24">
+  <h2 className="font-bold text-3xl md:text-[40px]">50+ Beautiful rooms inspiration</h2>
   <p className="pr-4">Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
   <button
           className="w-40 p-2 mt-10 rounded-lg text-center border border-[#B88E2F] bg-[#B88E2F] text-white 
@@ -282,12 +282,12 @@ hover:border-[#B88E2F]  hover:bg-white hover:text-[#B88E2F] "
         </button>
   </div>
   
-  <div className="w-1/3">
+  <div className="w-11/12 md:w-1/3">
   <Image src={"/images/Rectangle 24.png"} alt="Rectangle 24" width={100} height={100} className="w-full p-2"/>
   </div>
   
-  <div className="w-1/3">
-  <Image src={"/images/Rectangle 25.png"} alt="Rectangle 25" width={100} height={100} className="w-full"/>
+  <div className="w-11/12 md:w-1/3">
+  <Image src={"/images/Rectangle 25.png"} alt="Rectangle 25" width={100} height={100} className="w-full p-2"/>
   </div>
 
 </div>
