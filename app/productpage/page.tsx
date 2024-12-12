@@ -294,7 +294,7 @@ const page = () => {
           className="w-40 p-2 rounded-lg text-center border border-[#B88E2F] bg-white text-[#B88E2F] 
 hover:border-0 hover:bg-[#B88E2F] hover:text-white"
         >
-          <Link href="/">Shop More</Link>
+          <Link href="shop">Shop More</Link>
         </button>
       </div>
       <Footer />

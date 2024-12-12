@@ -41,7 +41,7 @@ const ProductActions: React.FC = () => {
         className="bg-transparent border border-black hover:border-0 
       hover:text-white hover:bg-[#B88E2F] w-40 px-6 py-2 rounded-lg"
       >
-        <Link href="/" className="text-base font-bold">
+        <Link href="productcart" className="text-base font-bold">
           Add To Cart
         </Link>
       </button>
@@ -50,7 +50,7 @@ const ProductActions: React.FC = () => {
         className="bg-transparent border border-black hover:border-0 
       hover:text-white hover:bg-[#B88E2F] w-40 px-6 py-2 rounded-lg"
       >
-        <Link href="/" className="text-base font-bold">
+        <Link href="comparision" className="text-base font-bold">
           + Compare
         </Link>
       </button>
