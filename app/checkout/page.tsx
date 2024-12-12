@@ -13,7 +13,7 @@ const page = () => {
       <Header />
       <div
         className="bg-[url('/images/bg-img.png')] bg-no-repeat 
-    bg-auto h-[300px] w-full flex flex-col items-center justify-center"
+    bg-cover h-[300px] w-full flex flex-col items-center justify-center"
       >
         <Image src={"/images/Logos-01.png"} alt="logo" width={80} height={50} />
         <h2 className="font-medium text-5xl mt-[-20px]">Checkout</h2>
@@ -153,7 +153,7 @@ const page = () => {
 
 <div className="w-full flex justify-center">
             <button className="w-[150px] mt-6 md:w-[180px] rounded-lg h-14 text-black bg-transparent border border-black hover:border-0 hover:bg-[#B88E2F] hover:text-white">
-              <Link href="/" className="font-medium text-base leading-6">
+              <Link href="" className="font-medium text-base leading-6">
                 Place Order
               </Link>
             </button>

@@ -13,7 +13,7 @@ const page = () => {
       <Header />
       <div
         className="bg-[url('/images/bg-img.png')] bg-no-repeat 
-    bg-auto h-[300px] w-full flex flex-col items-center justify-center"
+    bg-cover h-[300px] w-full flex flex-col items-center justify-center"
       >
         <Image src={"/images/Logos-01.png"} alt="logo" width={80} height={50} />
         <h2 className="font-medium text-3xl md:text-5xl mt-[-20px]">

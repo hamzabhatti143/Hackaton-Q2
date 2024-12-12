@@ -66,7 +66,7 @@ const page = () => {
 
           <div className="w-full flex justify-center">
             <button className="w-[150px] mt-6 md:w-[180px] rounded-lg h-14 text-black bg-transparent border border-black hover:border-0 hover:bg-[#B88E2F] hover:text-white">
-              <Link href="/" className="font-medium text-base leading-6">
+              <Link href="checkout" className="font-medium text-base leading-6">
                 Check Out
               </Link>
             </button>
