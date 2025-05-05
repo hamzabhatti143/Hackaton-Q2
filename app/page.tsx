@@ -2,8 +2,33 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
 
-export default function Home() {
+interface Product {
+  _id: string;
+  title: string;
+  price: number;
+  description: string;
+  discountPercentage: number;
+  imageUrl: string;
+  tags: string[];
+}
+export const revalidate = 10;
+export default async function Home() {
+  const postData = async () => {
+      const data = await client.fetch(`*[_type == "product"]{
+    title,
+    description,
+    price,
+    dicountPercentage,
+    tags,
+    "imageUrl": productImage.asset->url
+  }`);
+      return data;
+    };
+  
+    const receivedData: Product[] = await postData();
+    console.log(receivedData);
   return (
     <>
       <div
@@ -78,189 +103,38 @@ export default function Home() {
         <h3 className="font-bold text-[40px]">Our Products</h3>
       </div>
 
-      <div
-        className="w-full flex flex-col md:flex-row justify-center gap-4	
-    md:justify-around items-center pt-0 p-0 md:p-16"
-      >
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/Images.png"}
-              alt="Images"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
+     <div
+             className="w-full flex flex-wrap justify-center gap-4	
+         md:justify-around items-center pt-0 p-0 md:p-16"
+           >
+             {receivedData.slice(0,6).map((receivedData) => (
+               <div
+                 key={receivedData.title}
+                 className="w-11/12 flex flex-col justify-center space-y-4 md:w-1/4 mt-10 md:mt-0 "
+               >
+                 <div>
+                   <Image
+                     src={receivedData.imageUrl}
+                     alt="Images"
+                     width={120}
+                   height={80}
+                   className="w-[272px] h-60 m-auto rounded-md"
+                   />
+                 </div>
+     
+                 <h3 className="font-semibold leading-7 text-2xl">
+                   {receivedData.title}
+                 </h3>
+                 <p className="text-black text-base">
+                   {receivedData.description.slice(0, 250)}
+                 </p>
+                 <h3 className="font-semibold leading-7 text-xl">
+                   Rs {receivedData.price}
+                 </h3>
+               </div>
+             ))}
+           </div>
 
-          <h3 className="font-semibold leading-7 text-2xl bg-[#F4F5F7]">
-            Syltherine
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Stylish cafe chair
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 2.500.000
-          </h3>
-        </div>
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/Images (1).png"}
-              alt="Images (1)"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
-            Leviosa
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Stylish cafe chair
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 2.500.000
-          </h3>
-        </div>
-
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/Images (2).png"}
-              alt="Images (2)"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
-            Lolito
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Luxury big sofa
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 7.000.000
-          </h3>
-        </div>
-
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/image 4.png"}
-              alt="image 4"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
-            Respira
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Outdoor bar table and stool
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 500.000
-          </h3>
-        </div>
-      </div>
-
-      <div
-        className="w-full flex flex-col md:flex-row justify-center gap-4	
-    md:justify-around items-center pt-0 p-0 md:p-16"
-      >
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/Images.png"}
-              alt="Images"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 text-2xl bg-[#F4F5F7]">
-            Syltherine
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Stylish cafe chair
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 2.500.000
-          </h3>
-        </div>
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/Images (1).png"}
-              alt="Images (1)"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
-            Leviosa
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Stylish cafe chair
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 2.500.000
-          </h3>
-        </div>
-
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/Images (2).png"}
-              alt="Images (2)"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
-            Lolito
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Luxury big sofa
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 7.000.000
-          </h3>
-        </div>
-
-        <div className="w-11/12 md:w-1/4 mt-10 md:mt-0 ">
-          <div className="bg-[#F5F5F5]">
-            <Image
-              src={"/images/image 4.png"}
-              alt="image 4"
-              width={120}
-              height={80}
-              className="w-[272px] h-60"
-            />
-          </div>
-
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-2xl">
-            Respira
-          </h3>
-          <p className="text-[#898989] text-base bg-[#F4F5F7]">
-            Outdoor bar table and stool
-          </p>
-          <h3 className="font-semibold leading-7 bg-[#F4F5F7] text-xl">
-            Rp 500.000
-          </h3>
-        </div>
-      </div>
       <div className="w-full flex justify-center items-center">
         <button
           className="w-40 p-2 rounded-lg text-center border border-[#B88E2F] bg-white text-[#B88E2F] 

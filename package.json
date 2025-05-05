@@ -6,17 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import-data": "node scripts/importData.mjs"
   },
   "dependencies": {
     "@nextui-org/system": "^2.4.3",
     "@nextui-org/table": "^2.2.3",
     "@nextui-org/theme": "^2.4.1",
+    "@sanity/client": "^6.28.1",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.77.2",
+    "axios": "^1.8.1",
+    "dotenv": "^16.4.7",
     "framer-motion": "^11.13.1",
     "next": "14.2.6",
+    "next-sanity": "^9.8.60",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "sanity": "^3.77.2",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@types/node": "^20",
