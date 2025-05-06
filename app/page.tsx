@@ -122,9 +122,9 @@ export default async function Home() {
                    />
                  </div>
      
-                 <h3 className="font-semibold leading-7 text-2xl">
+                 <Link href={`/productdetails/${receivedData.title}`} className="font-semibold leading-7 text-2xl">
                    {receivedData.title}
-                 </h3>
+                 </Link>
                  <p className="text-black text-base">
                    {receivedData.description.slice(0, 250)}
                  </p>
@@ -140,7 +140,7 @@ export default async function Home() {
           className="w-40 p-2 rounded-lg text-center border border-[#B88E2F] bg-white text-[#B88E2F] 
 hover:border-0 hover:bg-[#B88E2F] hover:text-white"
         >
-          <Link href="productpage">Shop More</Link>
+          <Link href="shop">Shop More</Link>
         </button>
         </div>
 
