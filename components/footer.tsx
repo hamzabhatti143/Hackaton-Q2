@@ -18,7 +18,7 @@ function footer() {
             >
               Funiro
             </h2>
-            <p className="text-[#9F9F9F] text-base">
+            <p className="text-black text-base">
               400 University Drive Suite 200 Coral
               <br /> Gables, <br />
               FL 33134 USA
@@ -31,7 +31,7 @@ function footer() {
           >
             <h3
               className="font-medium leading-7
-            text-[#9F9F9F] text-base  md:mt-4 mb-8"
+            text-black text-base  md:mt-4 mb-8"
             >
               Links
             </h3>
@@ -55,7 +55,7 @@ function footer() {
           >
             <h3
               className="font-medium leading-7
-            text-[#9F9F9F] text-base mt-4 mb-8"
+            text-black text-base mt-4 mb-8"
             >
               Help
             </h3>
@@ -76,7 +76,7 @@ function footer() {
           >
             <h3
               className="font-medium leading-7
-            text-[#9F9F9F] text-xl mt-2 mb-16"
+            text-black text-xl mt-2 mb-16"
             >
               Newsletter
             </h3>

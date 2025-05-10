@@ -16,7 +16,7 @@ interface Product {
 export const revalidate = 10;
 export default async function Home() {
   const postData = async () => {
-      const data = await client.fetch(`*[_type == "product"]{
+    const data = await client.fetch(`*[_type == "product"]{
     title,
     description,
     price,
@@ -24,11 +24,11 @@ export default async function Home() {
     tags,
     "imageUrl": productImage.asset->url
   }`);
-      return data;
-    };
-  
-    const receivedData: Product[] = await postData();
-    console.log(receivedData);
+    return data;
+  };
+
+  const receivedData: Product[] = await postData();
+  console.log(receivedData);
   return (
     <>
       <div
@@ -103,37 +103,40 @@ export default async function Home() {
         <h3 className="font-bold text-[40px]">Our Products</h3>
       </div>
 
-     <div
-             className="w-full flex flex-wrap justify-center gap-4	
+      <div
+        className="w-full flex flex-wrap justify-center gap-4	
          md:justify-around items-center pt-0 p-0 md:p-16"
-           >
-             {receivedData.slice(0,6).map((receivedData) => (
-               <div
-                 key={receivedData.title}
-                 className="w-11/12 flex flex-col justify-center space-y-4 md:w-1/4 mt-10 md:mt-0 "
-               >
-                 <div>
-                   <Image
-                     src={receivedData.imageUrl}
-                     alt="Images"
-                     width={120}
-                   height={80}
-                   className="w-[272px] h-60 m-auto rounded-md"
-                   />
-                 </div>
-     
-                 <Link href={`/productdetails/${receivedData.title}`} className="font-semibold leading-7 text-2xl">
-                   {receivedData.title}
-                 </Link>
-                 <p className="text-black text-base">
-                   {receivedData.description.slice(0, 250)}
-                 </p>
-                 <h3 className="font-semibold leading-7 text-xl">
-                   Rs {receivedData.price}
-                 </h3>
-               </div>
-             ))}
-           </div>
+      >
+        {receivedData.slice(0, 6).map((receivedData) => (
+          <div
+            key={receivedData.title}
+            className="w-11/12 flex flex-col justify-center space-y-4 md:w-1/4 mt-10 md:mt-0 "
+          >
+            <div>
+              <Image
+                src={receivedData.imageUrl}
+                alt="Images"
+                width={120}
+                height={80}
+                className="w-[272px] h-60 m-auto rounded-md"
+              />
+            </div>
+
+            <Link
+              href={`/productdetails/${receivedData.title}`}
+              className="font-semibold leading-7 text-2xl"
+            >
+              {receivedData.title}
+            </Link>
+            <p className="text-black text-base">
+              {receivedData.description.slice(0, 250)}
+            </p>
+            <h3 className="font-semibold leading-7 text-xl">
+              Rs {receivedData.price}
+            </h3>
+          </div>
+        ))}
+      </div>
 
       <div className="w-full flex justify-center items-center">
         <button
@@ -142,34 +145,56 @@ hover:border-0 hover:bg-[#B88E2F] hover:text-white"
         >
           <Link href="shop">Shop More</Link>
         </button>
+      </div>
+
+      <div className="bg-[#FCF8F3] w-full flex flex-col md:flex-row justify-around items-center gap-4">
+        <div className="w-full md:w-1/2 p-10 md:p-24">
+          <h2 className="font-bold text-3xl md:text-[40px]">
+            50+ Beautiful rooms inspiration
+          </h2>
+          <p className="pr-4">
+            Our designer already made a lot of beautiful prototipe of rooms that
+            inspire you
+          </p>
+          <button
+            className="w-40 p-2 mt-10 rounded-lg text-center border border-[#B88E2F] bg-[#B88E2F] text-white 
+hover:border-[#B88E2F]  hover:bg-white hover:text-[#B88E2F] "
+          >
+            <Link href="productpage">Explore Now</Link>
+          </button>
         </div>
 
-<div className="bg-[#FCF8F3] w-full flex flex-col md:flex-row justify-around items-center gap-4">
-  <div className="w-full md:w-1/2 p-10 md:p-24">
-  <h2 className="font-bold text-3xl md:text-[40px]">50+ Beautiful rooms inspiration</h2>
-  <p className="pr-4">Our designer already made a lot of beautiful prototipe of rooms that inspire you</p>
-  <button
-          className="w-40 p-2 mt-10 rounded-lg text-center border border-[#B88E2F] bg-[#B88E2F] text-white 
-hover:border-[#B88E2F]  hover:bg-white hover:text-[#B88E2F] "
-        >
-          <Link href="productpage">Explore Now</Link>
-        </button>
-  </div>
-  
-  <div className="w-11/12 md:w-1/3">
-  <Image src={"/images/Rectangle 24.png"} alt="Rectangle 24" width={100} height={100} className="w-full p-2"/>
-  </div>
-  
-  <div className="w-11/12 md:w-1/3">
-  <Image src={"/images/Rectangle 25.png"} alt="Rectangle 25" width={100} height={100} className="w-full p-2"/>
-  </div>
+        <div className="w-11/12 md:w-1/3">
+          <Image
+            src={"/images/Rectangle 24.png"}
+            alt="Rectangle 24"
+            width={100}
+            height={100}
+            className="w-full p-2"
+          />
+        </div>
 
-</div>
+        <div className="w-11/12 md:w-1/3">
+          <Image
+            src={"/images/Rectangle 25.png"}
+            alt="Rectangle 25"
+            width={100}
+            height={100}
+            className="w-full p-2"
+          />
+        </div>
+      </div>
       <div className="w-full text-center">
         <p className="text-[#616161]">Share your setup with</p>
         <h3 className="font-bold text-[32px]">#FuniroFurniture</h3>
       </div>
-      <Image src={"/images/multi-img.png"} alt="multi-img" width={100} height={100} className="w-10/12"/>
+      <Image
+        src={"/images/multi-img.png"}
+        alt="multi-img"
+        width={100}
+        height={100}
+        className="w-10/12"
+      />
 
       <Footer />
     </>
