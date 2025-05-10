@@ -94,7 +94,7 @@ const page = async () => {
             className="w-11/12 flex flex-col justify-center space-y-4 md:w-1/4 mt-10 md:mt-0 "
           >
             <div>
-              <Link href={receivedData.title}>
+              <Link href={`/productdetails/${receivedData.title}`}>
                 <Image
                   src={receivedData.imageUrl}
                   alt="Images"
@@ -106,7 +106,7 @@ const page = async () => {
             </div>
 
             <Link
-              href={receivedData.title}
+              href={`/productdetails/${receivedData.title}`}
               className="font-semibold leading-7 text-2xl"
             >
               {receivedData.title}
