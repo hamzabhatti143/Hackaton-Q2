@@ -38,13 +38,13 @@ function footer() {
             <Link href="/" className="mt-6">
               Home
             </Link>
-            <Link href="shop" className="mt-6">
+            <Link href="/shop" className="mt-6">
               Shop
             </Link>
-            <Link href="comparision" className="mt-6">
+            <Link href="/comparision" className="mt-6">
               About
             </Link>
-            <Link href="contact" className="mt-6">
+            <Link href="/contact" className="mt-6">
               Contact
             </Link>
           </div>
@@ -62,10 +62,10 @@ function footer() {
             <Link href="/" className="mt-6">
               Payment Options
             </Link>
-            <Link href="shop" className="mt-6">
+            <Link href="/" className="mt-6">
               Returns
             </Link>
-            <Link href="contact" className="mt-6">
+            <Link href="/" className="mt-6">
               Privacy Policy
             </Link>
             <Link href="contact" className="mt-12"></Link>

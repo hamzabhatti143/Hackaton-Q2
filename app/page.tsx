@@ -113,13 +113,15 @@ export default async function Home() {
             className="w-11/12 flex flex-col justify-center space-y-4 md:w-1/4 mt-10 md:mt-0 "
           >
             <div>
-              <Image
-                src={receivedData.imageUrl}
-                alt="Images"
-                width={120}
-                height={80}
-                className="w-[272px] h-60 m-auto rounded-md"
-              />
+              <Link href={`/productdetails/${receivedData.title}`}>
+                <Image
+                  src={receivedData.imageUrl}
+                  alt="Images"
+                  width={120}
+                  height={80}
+                  className="w-[272px] h-60 m-auto rounded-md"
+                />
+              </Link>
             </div>
 
             <Link

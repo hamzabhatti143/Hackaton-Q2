@@ -22,9 +22,9 @@ function header() {
         </div>
         <div className="w-full md:w-1/3 flex flex-col md:flex-row justify-center items-center md:justify-around">
           <Link href="/">Home</Link>
-          <Link href="shop">Shop</Link>
-          <Link href="comparision">About</Link>
-          <Link href="contact">Contact</Link>
+          <Link href="/shop">Shop</Link>
+          <Link href="/comparision">About</Link>
+          <Link href="/contact">Contact</Link>
         </div>
         <div className="w-full md:w-1/3 flex justify-around items-center">
           <Link href="/">

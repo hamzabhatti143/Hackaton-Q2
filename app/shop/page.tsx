@@ -94,18 +94,23 @@ const page = async () => {
             className="w-11/12 flex flex-col justify-center space-y-4 md:w-1/4 mt-10 md:mt-0 "
           >
             <div>
-              <Image
-                src={receivedData.imageUrl}
-                alt="Images"
-                width={120}
-              height={80}
-              className="w-[272px] h-60 m-auto rounded-md"
-              />
+              <Link href={receivedData.title}>
+                <Image
+                  src={receivedData.imageUrl}
+                  alt="Images"
+                  width={120}
+                  height={80}
+                  className="w-[272px] h-60 m-auto rounded-md"
+                />
+              </Link>
             </div>
 
-            <h3 className="font-semibold leading-7 text-2xl">
+            <Link
+              href={receivedData.title}
+              className="font-semibold leading-7 text-2xl"
+            >
               {receivedData.title}
-            </h3>
+            </Link>
             <p className="text-black text-base">
               {receivedData.description.slice(0, 250)}
             </p>
